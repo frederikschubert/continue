@@ -55,7 +55,7 @@ async function getLinksFromUrl(url: string, path: string) {
   const location = new URL(path, url);
   let response;
   try {
-    response = await fetch(location.toString());
+    response = await fetch("https://r.jina.ai/" + location.toString());
   } catch (error: unknown) {
     if (error instanceof Error && error.message.includes("maximum redirect")) {
       console.error("Maximum redirect reached for: ", location.toString());
